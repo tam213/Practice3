@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.Infosys</groupId>
+  <artifactId>Sample-project</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>Sample-project</name>
+  <url>http://maven.apache.org</url>
+  
+<distributionManagement>
+    <repository>
+      <id>internalMavenaReleaseRepository</id>
+      <name>Internal Maven Release Repository</name>
+      <url>${releases.distribution.url}</url>
+    </repository>
+    <snapshotRepository>
+      <id>internalMavenaSnapshotRepository</id>
+      <name>Internal Maven Snapshot Repository</name>
+      <url>${snapshots.distribution.url}</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+<properties>
+     <repository.server.root>http://localhost:8081/repository</repository.server.root>
+     <releases.distribution.url>
+         ${repository.server.root}/test-release/
+     </releases.distribution.url>
+     <snapshots.distribution.url>
+         ${repository.server.root}/test-snapshot/
+     </snapshots.distribution.url>
+</properties>
+
+<dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
